@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="hero" class="hero">
+    <div class="hero-content">
+        <p class="greeting">Hi, I am a</p>
+        <h1 class="glitch-text" data-text="Software Engineer">Software Engineer</h1>
+        <p class="hero-subtitle">I build things for the web. Specialized in building beautifully designed, scalable, and secure digital experiences.</p>
+        <div class="hero-cta">
+            <a href="#projects" class="btn-outline">View My Work</a>
+        </div>
+    </div>
+    <div class="hero-graphics">
+        <div class="floating-code">
+            <pre><code>
+const engineer = {
+  stack: ["Django", "React", "Python", "TS"],
+  passion: "Building beautiful interfaces",
+  status: "Available for hire"
+};
+            </code></pre>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section reveal">
+    <h2 class="section-title"><span class="title-number">00.</span> About Me</h2>
+    <div class="about-content glass">
+        <p>Hello! I'm Marvelous Johnson (aka Mr Competent), a passionate software engineer who enjoys creating things that live on the internet. Whether that be websites, applications, or anything in between. My goal is to always build products that provide pixel perfect, performant experiences.</p>
+        <p>Fast forward to today, and my main focus is rapidly building accessible, inclusive products and sophisticated digital experience systems using Django and React.</p>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+    <h2 class="section-title"><span class="title-number">01.</span> My Arsenal</h2>
+    <div class="skills-grid">
+        <div class="skill-card glass">
+            <div class="skill-icon">🐍</div>
+            <h3>Backend Django</h3>
+            <p>Python, Django, FastAPI, PostgreSQL, Redis</p>
+        </div>
+        <div class="skill-card glass">
+            <div class="skill-icon">⚡</div>
+            <h3>Frontend Native</h3>
+            <p>JavaScript, React, Vue, HTML/CSS, Tailwind</p>
+        </div>
+        <div class="skill-card glass">
+            <div class="skill-icon">🚀</div>
+            <h3>DevOps / Cloud</h3>
+            <p>Docker, AWS, CI/CD, Nginx, Linux</p>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section">
+    <h2 class="section-title"><span class="title-number">02.</span> Featured Work</h2>
+    <div class="project-list">
+        
+        <div class="project-card glass reveal">
+            <div class="project-content">
+                <p class="project-overline">Featured Project</p>
+                <h3 class="project-title"><a href="https://bejaskihandyman.com/" target="_blank" style="color: inherit; text-decoration: none;">Bejaski Handyman</a></h3>
+                <div class="project-description">
+                    <p>A comprehensive home and office service booking platform featuring transparent pricing, rapid scheduling, and technician vetting. Designed for seamless user account management and service exploration.</p>
+                </div>
+                <ul class="project-tech">
+                    <li>Django</li><li>Python</li><li>PostgreSQL</li>
+                </ul>
+            </div>
+            <div class="project-image">
+                <a href="https://bejaskihandyman.com/" target="_blank" style="display: block; width: 100%; height: 100%;">
+                    <div class="image-placeholder">
+                        <img src="https://res.cloudinary.com/dafytulc6/image/upload/v1775523658/Screenshot_2026-04-06_at_5.35.29_PM_ttw4wt.png" alt="Bejaski Handyman Platform" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: all 0.3s ease;">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="project-card reverse glass reveal">
+            <div class="project-content">
+                <p class="project-overline">Featured Project</p>
+                <h3 class="project-title">Real-time Analytics Dashboard</h3>
+                <div class="project-description">
+                    <p>Financial tech dashboard combining WebSockets for real-time stock ticking and complex data visualization.</p>
+                </div>
+                <ul class="project-tech">
+                    <li>Python</li><li>WebSockets</li><li>D3.js</li>
+                </ul>
+            </div>
+            <div class="project-image">
+                <div class="image-placeholder bg-gradient-2"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <h2 class="section-title"><span class="title-number">03.</span> What's Next?</h2>
+    <h3 class="contact-heading">Get In Touch</h3>
+    <p class="contact-text">I'm actively open to exploring new opportunities and potential collaborations! My inbox is always open, so whether you have a project idea, a question, or just want to say hi, I'll try my best to get back to you!</p>
+    
+    <div id="contact-wrapper">
+        <button id="say-hello-btn" class="btn-primary large">Say Hello</button>
+        
+        <form id="contact-form" class="glass hidden" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required rows="5" placeholder="Hey there!"></textarea>
+            </div>
+            <button type="submit" class="btn-outline submit-btn">Send Message</button>
+            <p class="fallback-contact">
+                Having trouble with the form? You can reach out more directly by sending a message manually to <a href="mailto:hello@example.com">hello@example.com</a>.
+            </p>
+            <div id="form-status" class="hidden"></div>
+        </form>
+    </div>
+</section>
+{% endblock %}
